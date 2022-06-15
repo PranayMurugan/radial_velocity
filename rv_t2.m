@@ -5,7 +5,7 @@ P = 5;
 omega = 90;
 M = 1;
 %P = sqrt(4 * pi^2 * a^3 / (G * M));
-a = (P^2 * G * M / 4 * pi^2)^(1/3);
+a = (P^2 * G * M / (4 * pi^2))^(1/3);
 figure(1)
 filename = 'radial_vel.gif';
 for e = 0.1:0.1:0.9
@@ -31,6 +31,8 @@ for e = 0.1:0.1:0.9
         imwrite(imind,cm,filename,'gif','WriteMode','append');
     end
 end
+
+
 
 
 
