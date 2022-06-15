@@ -1,9 +1,11 @@
-a = 0.05;
+a_star = 0.05;
 G = 6.67 * 10^-11;
 i = 60;
-omega = -90;
+P = 5;
+omega = 90;
 M = 1;
-P = sqrt(4 * pi^2 * a^3 / (G * M));
+%P = sqrt(4 * pi^2 * a^3 / (G * M));
+a = (P^2 * G * M / 4 * pi^2)^(1/3);
 figure(1)
 filename = 'radial_vel.gif';
 for e = 0.1:0.1:0.9
@@ -13,9 +15,9 @@ for e = 0.1:0.1:0.9
         a_v = sqrt(G * M * a * (1 - e^2))/dist^2;
         d_t = 1 / a_v;
         sum = sum + d_t;
-        sum1 = sum/(60*60);
-        sum_t(theta) = sum1;
-        v_r = (2 * pi * a * sind(i) * (e * cosd(omega) + cosd(omega + theta))) / (P * sqrt(1 - e^2));
+        %sum1 = sum/(60*60);
+        sum_t(theta) = sum;
+        v_r = (2 * pi * a_star * sind(i) * (e * cosd(omega) + cosd(omega + theta))) / (P * sqrt(1 - e^2));
         radial_vel(theta) = v_r;
     end 
     plot(sum_t,radial_vel)
@@ -29,5 +31,8 @@ for e = 0.1:0.1:0.9
         imwrite(imind,cm,filename,'gif','WriteMode','append');
     end
 end
+
+
+
 
 
