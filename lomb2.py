@@ -41,6 +41,7 @@ plt.show()
 # Find the peak in the LombScargle probablity distribution
 
 peaks, height = find_peaks(power, height = 0.9)  # height = 0.9 refers the 90% probablity
+y = 1/(frequency[peaks])
 print(np.round(y,2))
 
 i = 0
