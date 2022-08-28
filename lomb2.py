@@ -1,5 +1,6 @@
 """ This program takes the data in the form of radial velocity and the time (in Julian days) at which the data was recorded,
-and applies Lomb-Scargle Periodogram, and finding the orbital time period, after finding the time period the radial velocity is folded to get the radial_velocity curve
+and applies Lomb-Scargle Periodogram, and finding the orbital time period,
+after finding the time period the radial velocity is folded to get the radial_velocity curve
 """
 import matplotlib.pyplot as plt
 from astropy.timeseries import LombScargle
@@ -54,3 +55,4 @@ plt.xlabel('Time period')
 plt.ylabel('Radial velocity')
 plt.title('R_V curve')
 plt.show()
+
