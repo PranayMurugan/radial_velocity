@@ -37,5 +37,9 @@ i = 0
 for x in t:
     new_t.append(x % y)
 
-plt.scatter(new_t, r)
+plt.errorbar(new_t, r, yerr = dr, fmt="o")
+plt.xlabel('Time period')
+plt.ylabel('Radial velocity')
+plt.title('R_V curve')
 plt.show()
+
