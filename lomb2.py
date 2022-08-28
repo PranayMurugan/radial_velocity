@@ -36,6 +36,9 @@ plt.show()
 
 frequency, power = LombScargle(t, r, dr).autopower()
 plt.plot(frequency, power)
+plt.xlabel('frequency')
+plt.ylabel('power/probablity')
+plt.title('LombScargle Periodogram')
 plt.show()
 
 # Find the peak in the LombScargle probablity distribution
